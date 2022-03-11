@@ -1,24 +1,25 @@
 // ==UserScript==
 // @name         有谱么自动播放
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @namespace    https://github.com/qiurin
+// @version      0.2
+// @description  有谱么自动播放
+// @author       秋林
 // @match        https://yoopu.me/view/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=yoopu.me
 // @grant        none
+
+// @require      https://raw.githubusercontent.com/qiurin/yoopu/main/auto.js
 // ==/UserScript==
 
 // "use strict";
-
-function goPlay() {
+window.goPlay = function () {
   var Pbutton = document.querySelector("button.svelte-ugaeen.accent");
   Pbutton.click();
   setInterval(function () {
     Pbutton.click();
     Pbutton.click();
   }, 14000);
-}
+};
 
 var MyDiv = document.querySelector("div.button-container");
 var button =
